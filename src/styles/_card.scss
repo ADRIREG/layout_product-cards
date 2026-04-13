@@ -4,7 +4,7 @@
   box-sizing: border-box;
   width: 200px;
   height: 408px;
-  padding: 16px;
+  padding: 16px 17px;
   background-color: $color-white;
   border: 1px solid $color-border;
   transition: box-shadow 0.3s ease;
@@ -92,19 +92,21 @@
   }
 
   &__button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 10px 0;
+    height: 40px;
     font-size: 14px;
     font-weight: 700;
-    line-height: 1.43;
     color: $color-white;
     text-align: center;
     text-decoration: none;
     background-color: $color-main;
-    border: 1px solid transparent;
-    border-radius: 4px;
+    border: 1px solid $color-main;
+    border-radius: 5px;
     transition: all 0.3s ease;
+    box-sizing: border-box;
   }
 
   &:hover {
@@ -113,7 +115,6 @@
     .card__button {
       color: $color-main;
       background-color: transparent;
-      border-color: $color-main;
     }
   }
 }

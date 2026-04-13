@@ -1,6 +1,6 @@
 .stars {
   display: inline-block;
-  width: 80px;  // 5 gwiazdek po 16px
+  width: 80px; // 5 gwiazdek po 16px
   height: 16px; // wysokość jednej gwiazdki
 
   // Tło z pustymi gwiazdkami x 5
@@ -23,9 +23,19 @@
   }
 
   // kontrola żółtej warstwy
-  &--1::before { width: 20%; }  // 1 gwiazdka
-  &--2::before { width: 40%; }  // 2 gwiazdki
-  &--3::before { width: 60%; }  // 3 gwiazdki
-  &--4::before { width: 80%; }  // 4 gwiazdki
-  &--5::before { width: 100%; } // 5 gwiazdek
+  &--1::before {
+    width: 20%;
+  } // 1 gwiazdka
+  &--2::before {
+    width: 40%;
+  } // 2 gwiazdki
+  &--3::before {
+    width: 60%;
+  } // 3 gwiazdki
+  &--4::before {
+    width: 80%;
+  } // 4 gwiazdki
+  &--5::before {
+    width: 100%;
+  } // 5 gwiazdek
 }
