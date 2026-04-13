@@ -1,41 +1,50 @@
 .card {
-  width: $card-width;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 200px;
   height: 408px;
   padding: 16px;
   background-color: $color-white;
   border: 1px solid $color-border;
-  display: flex;
-  flex-direction: column;
   transition: box-shadow 0.3s ease;
-  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 
   &__image-container {
-    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 150px;
     margin-bottom: 12px;
     text-decoration: none;
   }
 
   &__image {
+    display: block;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
   &__title {
+    display: -webkit-box;
+    height: 60px;
+    margin-bottom: 4px;
     font-size: 14px;
     font-weight: 500;
+    line-height: 1.43;
     color: $color-black;
     text-decoration: none;
-    line-height: 1.4;
-    margin-bottom: 4px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
     overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
 
     &:hover {
       text-decoration: underline;
@@ -43,9 +52,10 @@
   }
 
   &__code {
-    font-size: 12px;
-    color: $color-gray-text;
     margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: $color-gray-text;
   }
 
   &__rating {
@@ -57,6 +67,7 @@
 
   &__reviews {
     font-size: 12px;
+    line-height: 1.33;
     color: $color-black;
   }
 
@@ -64,6 +75,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-top: 12px;
     margin-bottom: 12px;
   }
 
@@ -75,6 +87,7 @@
   &__price {
     font-size: 20px;
     font-weight: 700;
+    line-height: 1.2;
     color: $color-black;
   }
 
@@ -82,13 +95,15 @@
     display: block;
     width: 100%;
     padding: 10px 0;
-    background-color: $color-main;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.43;
     color: $color-white;
     text-align: center;
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 4px;
+    background-color: $color-main;
     border: 1px solid transparent;
+    border-radius: 4px;
     transition: all 0.3s ease;
   }
 
@@ -96,8 +111,8 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
     .card__button {
-      background-color: transparent;
       color: $color-main;
+      background-color: transparent;
       border-color: $color-main;
     }
   }
