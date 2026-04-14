@@ -108,8 +108,6 @@
     justify-content: center;
     position: relative;
 
-    // 1. Ustawiamy pełny piksel, żeby krawędzie były ostre (brak fioletu na obrysie)
-    // Jeśli -2.5px było idealne dla tekstu, spróbuj -2px lub -3px dla tła
     top: -2px;
 
     width: 100%;
@@ -117,12 +115,7 @@
     border-radius: 5px;
     background-color: #00acdc;
     border: none;
-
-    // 2. Korygujemy pozycję samego tekstu wewnątrz pudełka
-    // Padding-bottom "wypchnie" napis BUY do góry o ten brakujący ułamek
     padding-bottom: 2px;
-
-    // 3. Reszta bez zmian
     font-size: 14px;
     font-weight: 700;
     color: #fff;

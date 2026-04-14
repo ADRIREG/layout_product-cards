@@ -6,7 +6,7 @@
   background-image: url('../images/star.svg');
   background-repeat: repeat-x;
   background-size: 20px 12px;
-  margin-top: -4px; // Zostawiamy, to trafiło w pion!
+  margin-top: -4px;
   margin-left: -2px;
   transform: translateY(-1px);
 
@@ -21,19 +21,11 @@
     background-size: 20px 12px;
     width: 0;
   }
-
-  // Poprawione progi wypełnienia (dodajemy "nadmiar" pikseli):
+  
   &--4::before {
-    // Matematyka: 3 przerwy * 20px + 12px gwiazdka = 72px.
-    // Naddatek: 72px + 10px = 82px.
-    // To na pewno przykryje ramiona czwartej gwiazdki!
     width: 82px;
   }
 
-  // Dla 5 gwiazdek: 4 przerwy * 20px + 12px gwiazdka = 92px.
-  // Tu też dajmy zapas: 92px + 10px = 102px.
-  // Ale pamiętaj, że nadrzędny `.stars` ma tylko 96px,
-  // więc pusta przestrzeń na końcu nie zostanie wypełniona.
   &--5::before {
     width: 102px;
   }
