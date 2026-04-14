@@ -4,10 +4,10 @@
   box-sizing: border-box;
   width: 200px;
   height: 408px;
-  padding: 16px 17px;
-  background-color: $color-white;
-  border: 1px solid $color-border;
-  transition: box-shadow 0.3s ease;
+  padding: 24px 16px 15px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #e2e2e2;
   font-family: Roboto, sans-serif;
 
   &__image-container {
@@ -15,14 +15,14 @@
     justify-content: center;
     align-items: center;
     height: 150px;
-    margin-bottom: 12px;
+    margin-bottom: 30px; // Zmniejszony z 40, bo obniżyliśmy cały kontener paddingiem
     text-decoration: none;
   }
 
   &__image {
     display: block;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 97.5%;
+    max-height: 97.5%;
     object-fit: contain;
   }
 
@@ -34,87 +34,100 @@
 
   &__title {
     display: -webkit-box;
-    height: 60px;
-    margin-bottom: 4px;
-    font-size: 14px;
+    height: 32px;
+    margin-bottom: 12px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 1.43;
-    color: $color-black;
+    line-height: 18px;
+    color: #060b35;
+    letter-spacing: 0%;
     text-decoration: none;
     overflow: hidden;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
-    line-clamp: 3;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   &__code {
-    margin-bottom: 12px;
-    font-size: 12px;
-    line-height: 1.33;
-    color: $color-gray-text;
+    height: 14px;
+    margin-bottom: 20px;
+    font-size: 10px;
+    line-height: 1;
+    color: #616070;
   }
 
   &__rating {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
+    height: 16px; // Dopasowane do nowych gwiazdek
     margin-bottom: auto;
+    overflow: visible;
   }
 
   &__reviews {
-    font-size: 12px;
-    line-height: 1.33;
-    color: $color-black;
+    position: relative;
+    top: -3px; // Korygujemy pozycję tekstu względem gwiazdek
+    width: 53px;
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+    line-height: 1;
+    text-align: right;
+    color: #060b35;
+    white-space: nowrap;
   }
 
   &__price-row {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    height: 18px;
+    margin-top: 8px;
+    margin-bottom: 17px;
   }
 
   &__price-label {
-    font-size: 14px;
-    color: $color-gray-text;
+    font-size: 12px;
+    line-height: 1.3;
+    position: relative;
+    top: -2px;
+    color: #616070;
   }
 
   &__price {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 1.2;
-    color: $color-black;
+    line-height: 1;
+    color: #060b35;
   }
 
   &__button {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+
+    // 1. Ustawiamy pełny piksel, żeby krawędzie były ostre (brak fioletu na obrysie)
+    // Jeśli -2.5px było idealne dla tekstu, spróbuj -2px lub -3px dla tła
+    top: -2px;
+
     width: 100%;
     height: 40px;
+    border-radius: 5px;
+    background-color: #00acdc;
+    border: none;
+
+    // 2. Korygujemy pozycję samego tekstu wewnątrz pudełka
+    // Padding-bottom "wypchnie" napis BUY do góry o ten brakujący ułamek
+    padding-bottom: 2px;
+
+    // 3. Reszta bez zmian
     font-size: 14px;
     font-weight: 700;
-    color: $color-white;
-    text-align: center;
+    color: #fff;
     text-decoration: none;
-    background-color: $color-main;
-    border: 1px solid $color-main;
-    border-radius: 5px;
-    transition: all 0.3s ease;
     box-sizing: border-box;
-  }
-
-  &:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-    .card__button {
-      color: $color-main;
-      background-color: transparent;
-    }
+    line-height: 1;
   }
 }

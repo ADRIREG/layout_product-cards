@@ -1,15 +1,15 @@
 .stars {
   display: inline-block;
-  width: 80px; // 5 gwiazdek po 16px
-  height: 16px; // wysokość jednej gwiazdki
-
-  // Tło z pustymi gwiazdkami x 5
+  position: relative;
+  width: 96px;
+  height: 16px;
   background-image: url('../images/star.svg');
   background-repeat: repeat-x;
-  background-size: 16px 16px;
-  position: relative;
+  background-size: 20px 12px;
+  margin-top: -4px; // Zostawiamy, to trafiło w pion!
+  margin-left: -2px;
+  transform: translateY(-1px);
 
-  // Tworzy "warstwę" z pełnymi gwiazdkami za pomocą pseudoelementu
   &::before {
     content: '';
     position: absolute;
@@ -18,24 +18,23 @@
     height: 100%;
     background-image: url('../images/star-active.svg');
     background-repeat: repeat-x;
-    background-size: 16px 16px;
-    width: 0; // domyślnie 0 gwiazdek jest pełnych
+    background-size: 20px 12px;
+    width: 0;
   }
 
-  // kontrola żółtej warstwy
-  &--1::before {
-    width: 20%;
-  } // 1 gwiazdka
-  &--2::before {
-    width: 40%;
-  } // 2 gwiazdki
-  &--3::before {
-    width: 60%;
-  } // 3 gwiazdki
+  // Poprawione progi wypełnienia (dodajemy "nadmiar" pikseli):
   &--4::before {
-    width: 80%;
-  } // 4 gwiazdki
+    // Matematyka: 3 przerwy * 20px + 12px gwiazdka = 72px.
+    // Naddatek: 72px + 10px = 82px.
+    // To na pewno przykryje ramiona czwartej gwiazdki!
+    width: 82px;
+  }
+
+  // Dla 5 gwiazdek: 4 przerwy * 20px + 12px gwiazdka = 92px.
+  // Tu też dajmy zapas: 92px + 10px = 102px.
+  // Ale pamiętaj, że nadrzędny `.stars` ma tylko 96px,
+  // więc pusta przestrzeń na końcu nie zostanie wypełniona.
   &--5::before {
-    width: 100%;
-  } // 5 gwiazdek
+    width: 102px;
+  }
 }
